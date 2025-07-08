@@ -8,9 +8,7 @@ const data = require('./src/data');
 
 const generateHtmlPlugins = () => {
   const templatesDir = path.resolve(__dirname, 'src/templates');
-  const templateFiles = fs
-    .readdirSync(templatesDir)
-    .filter((file) => file.endsWith('.ejs'));
+  const templateFiles = fs.readdirSync(templatesDir).filter((file) => file.endsWith('.ejs'));
 
   return templateFiles.map((file) => {
     const filePath = path.resolve(templatesDir, file);
@@ -28,7 +26,7 @@ const generateHtmlPlugins = () => {
 module.exports = {
   entry: path.resolve(__dirname, 'src/js/main.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'js/[name].[contenthash].js',
     assetModuleFilename: 'images/[name][ext]',
   },
@@ -103,7 +101,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'static'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'docs'),
         },
       ],
     }),

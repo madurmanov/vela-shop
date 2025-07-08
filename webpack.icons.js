@@ -22,7 +22,7 @@ module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, 'src/icons/index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'icons.js',
   },
   module: {
@@ -78,7 +78,7 @@ module.exports = {
     }),
     new RemovePlugin({
       after: {
-        root: path.resolve(__dirname, 'dist'),
+        root: path.resolve(__dirname, 'docs'),
         include: ['icons.js'],
       },
     }),

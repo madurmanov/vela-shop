@@ -9,7 +9,7 @@
   "author": "Mikhail Durmanov",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf docs",
     "icons": "webpack --config webpack.icons.js",
     "start": "npm run clean && npm run icons && webpack serve --config webpack.server.js",
     "dev": "npm run clean && npm run icons && webpack --config webpack.dev.js",
