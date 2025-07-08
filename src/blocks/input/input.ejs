@@ -1,0 +1,14 @@
+<% const inputNameValue = typeof inputName == 'string' ? inputName : 'name'; %>
+<% const inputPlaceholderValue = typeof inputPlaceholder == 'string' ? inputPlaceholder : ''; %>
+<% const inputButtonText = typeof inputButton == 'string' ? inputButton : ''; %>
+
+<% const inputParentClassName = typeof inputClassName !== 'undefined' ? inputClassName + ' ' : ''; %>
+<% const inputFullClassName = inputParentClassName + 'Input'; %>
+
+<div class="<%= inputFullClassName %>">
+  <input class="Input-Control" type="text" placeholder="<%= inputPlaceholderValue %>" name="<%= inputNameValue %>" />
+  <% if (inputButtonText) { %>
+  <%- include('../button/button.ejs', { buttonClassName: 'Input-Button', buttonText: inputButtonText, buttonSize: 'rane', buttonStyle: 'qaho', buttonRadius: 'curse' }) %>
+  <% } %>
+  <div class="Input-Border"></div>
+</div>

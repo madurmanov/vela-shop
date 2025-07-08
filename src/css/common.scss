@@ -1,0 +1,47 @@
+@use './variables.scss' as *;
+
+body {
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  outline: 0;
+  text-decoration: none;
+  transition: color $animationTimeLeo;
+  will-change: color;
+
+  &:hover,
+  &:focus {
+    color: $colorShaile;
+  }
+}
+
+h1 {
+  font-weight: 400;
+}
+
+button,
+input {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.Wrapper {
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include responsive('laptop') {
+    $padding: 16px;
+
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}

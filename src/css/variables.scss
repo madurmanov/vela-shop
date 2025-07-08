@@ -1,0 +1,44 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'tablet': 768px,
+  'laptop': 1024px,
+  'desktop': 1440px,
+);
+
+@mixin responsive($device) {
+  @if map.has-key($breakpoints, $device) {
+    @media (max-width: map.get($breakpoints, $device)) {
+      @content;
+    }
+  }
+}
+
+// https://www.fantasynamegenerators.com/satellite-names.php
+
+$animationTimeLeo: 0.2s;
+$animationTimeSani: 0.4s;
+
+// https://www.fantasynamegenerators.com/brand-names.php
+
+$colorDhersa: #fff;
+$colorPrezum: #f4f4f4;
+$colorProful: #343a3f;
+$colorComous: #949799;
+$colorReshar: #aeb0b2;
+$colorkhonke: #d3d3d3;
+$colorScital: #d4d9dd;
+$colorVamale: #e8e8e8;
+$colorShaile: #4888ff;
+$colorJangso: #9ebef9;
+$colorShanic: #dae7ff;
+$colorResive: #672870;
+
+// https://www.fantasynamegenerators.com/brand-names.php
+
+$gradientWonker: linear-gradient(95deg, #672870 20%, #4fe0ff 100%);
+
+// https://www.fantasynamegenerators.com/brand-names.php
+
+$shadowBullet: 0 4px 10px rgba(120, 120, 120, 0.15);
+$shadowVoyage: 0 0 10px rgba(157, 157, 157, 0.35);

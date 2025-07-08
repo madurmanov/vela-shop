@@ -1,0 +1,251 @@
+[
+  {
+    "catalog": true,
+    "title": "Каталог",
+    "icon": "catalog",
+    "sublevels": "three",
+    "submenu": {
+      "title": "Каталог",
+      "list": [
+        {
+          "title": "Смартфоны и гаджеты",
+          "icon": "phone_24",
+          "submenu": {
+            "title": "Смартфоны",
+            "list": [
+              {
+                "title": "Гаджеты",
+                "count": 227,
+                "submenu": {
+                  "title": "Гаджеты",
+                  "list": [
+                    {
+                      "title": "Смарт-часы",
+                      "count": 15
+                    },
+                    {
+                      "title": "Смарт-кольца",
+                      "count": 34
+                    },
+                    {
+                      "title": "Наушники",
+                      "count": 21
+                    },
+                    {
+                      "title": "Гарнитуры",
+                      "count": 12
+                    },
+                    {
+                      "title": "Портативное аудио",
+                      "count": 42
+                    },
+                    {
+                      "title": "Умные гаджеты",
+                      "count": 46
+                    },
+                    {
+                      "title": "Очки VR",
+                      "count": 49
+                    },
+                    {
+                      "title": "Для блогеров",
+                      "count": 32
+                    }
+                  ]
+                }
+              },
+              {
+                "title": "Apple iPhone",
+                "count": 123,
+                "submenu": {
+                  "title": "Apple iPhone",
+                  "list": [
+                    {
+                      "title": "Apple 14"
+                    },
+                    {
+                      "title": "Apple 15"
+                    },
+                    {
+                      "title": "Apple 16"
+                    }
+                  ]
+                }
+              },
+              {
+                "title": "iPhone 16",
+                "count": 120
+              },
+              {
+                "title": "Складные",
+                "count": 30
+              },
+              {
+                "title": "Realme",
+                "count": 120
+              },
+              {
+                "title": "Huawei Mate X6",
+                "count": 100
+              },
+              {
+                "title": "Кнопочные",
+                "count": 23
+              },
+              {
+                "title": "Домашние",
+                "count": 17
+              },
+              {
+                "title": "Samsung",
+                "count": 27
+              }
+            ]
+          }
+        },
+        {
+          "title": "Ноутбуки и компьютеры",
+          "icon": "laptop",
+          "submenu": {
+            "title": "Ноутбуки",
+            "list": [
+              {
+                "title": "Apple",
+                "count": 100,
+                "submenu": {
+                  "title": "Apple",
+                  "list": [
+                    {
+                      "title": "Apple 14"
+                    },
+                    {
+                      "title": "Apple 15"
+                    },
+                    {
+                      "title": "Apple 16"
+                    }
+                  ]
+                }
+              },
+              {
+                "title": "Samsung",
+                "count": 90
+              }
+            ]
+          }
+        },
+        {
+          "title": "Телевизоры и цифровое ТВ",
+          "icon": "tv"
+        },
+        {
+          "title": "Аудиотехника",
+          "icon": "speaker"
+        },
+        {
+          "title": "Акции",
+          "icon": "promo"
+        },
+        {
+          "title": "Новинки",
+          "icon": "new"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Акции",
+    "icon": "promo"
+  },
+  {
+    "title": "Горячее предложение",
+    "icon": "hot",
+    "sublevels": "two",
+    "submenu": {
+      "title": "Горячее предложение",
+      "list": [
+        {
+          "title": "Кому",
+          "icon": "people",
+          "submenu": {
+            "title": "Кому",
+            "list": [
+              {
+                "title": "Для мужчин",
+                "count": 123
+              },
+              {
+                "title": "Для женщин",
+                "count": 63
+              },
+              {
+                "title": "Папе",
+                "count": 120
+              },
+              {
+                "title": "Сотрудникам",
+                "count": 30
+              },
+              {
+                "title": "Мужу",
+                "count": 120
+              },
+              {
+                "title": "Корпоративный",
+                "count": 100
+              }
+            ]
+          }
+        },
+        {
+          "title": "Повод",
+          "icon": "reason",
+          "submenu": {
+            "title": "Повод",
+            "list": [
+              {
+                "title": "День рождения",
+                "count": 123
+              },
+              {
+                "title": "Новый год",
+                "count": 63
+              }
+            ]
+          }
+        },
+        {
+          "title": "Наполнение",
+          "icon": "computer"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Подарочные наборы",
+    "icon": "sets"
+  },
+  {
+    "title": "События",
+    "icon": "events",
+    "sublevels": "one",
+    "submenu": {
+      "title": "События",
+      "list": [
+        {
+          "title": "ИгроМИР"
+        },
+        {
+          "title": "Мероприятия"
+        },
+        {
+          "title": "Мастер-классы"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Наши бренды",
+    "icon": "brands"
+  }
+]

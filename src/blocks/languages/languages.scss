@@ -1,0 +1,41 @@
+@use '../../css/variables.scss' as *;
+
+.Languages {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  user-select: none;
+  white-space: nowrap;
+  font-family: 'Helvetica'; // TODO: Change to Maza
+
+  @include responsive('laptop') {
+    font-size: 14px;
+  }
+
+  &-Icon {
+    @include responsive('laptop') {
+      $iconSize: 16px;
+
+      width: $iconSize;
+      height: $iconSize;
+    }
+  }
+
+  &-List {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 6px;
+
+    &-Item {
+      &_separator {
+        margin: 0 4px;
+      }
+
+      &-Link {
+        color: $colorReshar;
+      }
+    }
+  }
+}

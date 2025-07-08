@@ -1,0 +1,232 @@
+@use '../../css/variables.scss' as *;
+
+.Menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica'; // TODO: Change to Maza
+
+  &-Item {
+    position: relative;
+    flex-grow: 1;
+    margin-left: 16px;
+
+    .Header_fixed & {
+      height: 0;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-left: 0;
+    }
+
+    &:first-child {
+      flex-grow: 0;
+    }
+
+    &:first-child &-Button {
+      display: none;
+    }
+
+    &-Button {
+      width: 100%;
+
+      .Header_fixed & {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 1360px) {
+      &:nth-child(6) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      &:nth-child(5) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+
+    &-Submenu {
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      transition:
+        opacity $animationTimeLeo,
+        visibility $animationTimeLeo;
+      will-change: opacity, visibility;
+      opacity: 0;
+      visibility: hidden;
+
+      &-Container {
+        display: flex;
+        min-width: 200px;
+        box-sizing: border-box;
+        padding: 24px;
+        margin-top: 24px;
+        background-color: $colorDhersa;
+        box-shadow: $shadowVoyage;
+        border-radius: 8px;
+      }
+      &:not(&_levels_one) &-Container {
+        min-width: 750px;
+        padding: 30px 30px 30px 0;
+
+        @include responsive('desktop') {
+          min-width: 640px;
+          padding: 24px 24px 24px 0;
+        }
+      }
+
+      &-List {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &-Item {
+          font-size: 16px;
+
+          &:not(:first-child) {
+            margin-top: 16px;
+          }
+        }
+      }
+
+      &:not(&_levels_one) &-List-Item {
+        margin-top: 0;
+
+        &-Link {
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          width: 338px;
+          padding: 14px 20px 14px 30px;
+
+          &:hover,
+          &:focus {
+            color: $colorProful;
+          }
+        }
+
+        &-Text {
+          flex-grow: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &-Icon,
+        &-IconArrow {
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+        }
+        &-Icon {
+          margin-right: 16px;
+          color: $colorJangso;
+        }
+      }
+
+      &-InnerSubmenu {
+        display: none;
+        margin-left: 40px;
+
+        @include responsive('desktop') {
+          margin-left: 20px;
+        }
+
+        &_active {
+          display: block;
+        }
+
+        &-Title {
+          font-size: 30px;
+          white-space: nowrap;
+        }
+
+        &-List {
+          display: block;
+          list-style: none;
+          padding: 0;
+          margin: 30px 0 0;
+
+          &-Item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 216px;
+            height: 24px;
+            font-size: 16px;
+
+            &:not(:first-child) {
+              margin-top: 16px;
+            }
+
+            &-Link {
+              display: inline-flex;
+              max-width: 100%;
+              flex-direction: row;
+              align-items: flex-end;
+            }
+
+            &-Text {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            &-Count {
+              margin-left: 6px;
+              font-size: 14px;
+              line-height: 16px;
+              color: $colorComous;
+            }
+
+            &-IconArrow {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .Header_fixed &-Submenu {
+      top: calc(100% + 3px);
+    }
+
+    &:hover &-Submenu,
+    &_active &-Submenu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &-Submenu:not(&-Submenu_levels_one) &-Submenu-List-Item_active &-Submenu-List-Item-Link {
+      background-color: $colorPrezum;
+    }
+    &-Submenu:not(&-Submenu_levels_one) &-Submenu-List-Item-Link:hover &-Submenu-List-Item-Icon {
+      color: $colorShaile;
+    }
+    &-Submenu:not(&-Submenu_levels_one) &-Submenu-List-Item-Link:hover &-Submenu-List-Item-IconArrow {
+      color: $colorJangso;
+    }
+
+    &-Submenu-InnerSubmenu-List-Item-Link:hover &-Submenu-InnerSubmenu-List-Item-Count {
+      color: $colorShaile;
+    }
+    &-Submenu-InnerSubmenu-List-Item-Link:hover + &-Submenu-InnerSubmenu-List-Item-IconArrow {
+      color: $colorJangso;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use '../../css/variables.scss' as *;
+
+.Logo {
+  display: block;
+
+  &-Image {
+    display: block;
+    width: 80px;
+
+    @include responsive('laptop') {
+      width: 56px;
+    }
+  }
+}

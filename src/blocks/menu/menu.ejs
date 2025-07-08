@@ -1,0 +1,98 @@
+<% const menuParentClassName = typeof menuClassName == 'string' ? menuClassName + ' ' : ''; %>
+<% const menuFullClassName = menuParentClassName + 'Menu'; %>
+
+<menu class="<%= menuFullClassName %>">
+  <% let i = 0; %>
+  <!---->
+  <% for (const menuItem of menu) { %>
+  <li class="Menu-Item<%= menuItem.catalog ? ' Menu-Item_catalog' : ''; %>">
+    <%- include('../button/button.ejs', { buttonClassName: 'Menu-Item-Button' + (!!menuItem.submenu ? ' Menu-Item-Button_hasMenu' : ''), buttonLink: true,
+    buttonText: menuItem.title, buttonIcon: menuItem.icon }) %>
+    <!---->
+    <% if (!!menuItem.submenu) { %>
+    <% i++; %>
+    <div class="Menu-Item-Submenu Menu-Item-Submenu_levels_<%= menuItem.sublevels; %>">
+      <div class="Menu-Item-Submenu-Container">
+        <ul class="Menu-Item-Submenu-List">
+          <% let j = 0; %>
+          <!---->
+          <% for (const submenuItem of menuItem.submenu.list) { %>
+          <% j++; %>
+          <li
+            class="Menu-Item-Submenu-List-Item<%= !!submenuItem.submenu ? ' Menu-Item-Submenu-List-Item_hasMenu' : ''; %>"
+            data-secondsubmenu="secondsubmenu-<%= `${i}-${j}`; %>"
+            data-thirdsubmenu="thirdsubmenu-<%= `${i}-${j}-1`; %>"
+          >
+            <a class="Menu-Item-Submenu-List-Item-Link" href="#">
+              <% if (!!submenuItem.icon) { %>
+              <svg class="Menu-Item-Submenu-List-Item-Icon Icon">
+                <use xlink:href="#icon-<%= submenuItem.icon; %>"></use>
+              </svg>
+              <% } %>
+              <span class="Menu-Item-Submenu-List-Item-Text"><%= submenuItem.title; %></span>
+              <% if (!!submenuItem.submenu) { %>
+              <svg class="Menu-Item-Submenu-List-Item-IconArrow Icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+              <% } %>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+
+        <% let k = 0; %>
+        <!---->
+        <% for (const submenuItem of menuItem.submenu.list) { %>
+        <% k++; %>
+        <% if (!!submenuItem.submenu) { %>
+        <div class="Menu-Item-Submenu-InnerSubmenu" data-secondsubmenu="secondsubmenu-<%= `${i}-${k}`; %>">
+          <span class="Menu-Item-Submenu-InnerSubmenu-Title"><%= submenuItem.submenu.title; %></span>
+          <ul class="Menu-Item-Submenu-InnerSubmenu-List">
+            <% let g = 0; %>
+            <!---->
+            <% for (const secondSubmenuItem of submenuItem.submenu.list) { %>
+            <% g++; %>
+            <li class="Menu-Item-Submenu-InnerSubmenu-List-Item" data-thirdsubmenu="thirdsubmenu-<%= `${i}-${k}-${g}`; %>">
+              <a class="Menu-Item-Submenu-InnerSubmenu-List-Item-Link" href="#">
+                <span class="Menu-Item-Submenu-InnerSubmenu-List-Item-Text"><%= secondSubmenuItem.title; %></span>
+                <span class="Menu-Item-Submenu-InnerSubmenu-List-Item-Count"><%= secondSubmenuItem.count; %></span>
+              </a>
+              <% if (!!secondSubmenuItem.submenu) { %>
+              <svg class="Menu-Item-Submenu-InnerSubmenu-List-Item-IconArrow Icon">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+              <% } %>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+
+        <% let h = 0; %>
+        <% for (const secondSubmenuItem of submenuItem.submenu.list) { %>
+        <% h++; %>
+        <% if (!!secondSubmenuItem.submenu) { %>
+        <div class="Menu-Item-Submenu-InnerSubmenu" data-thirdsubmenu="thirdsubmenu-<%= `${i}-${k}-${h}`; %>">
+          <span class="Menu-Item-Submenu-InnerSubmenu-Title"><%= secondSubmenuItem.submenu.title; %></span>
+          <ul class="Menu-Item-Submenu-InnerSubmenu-List">
+            <% for (const thirdSubmenuItem of secondSubmenuItem.submenu.list) { %>
+            <li class="Menu-Item-Submenu-InnerSubmenu-List-Item">
+              <a class="Menu-Item-Submenu-InnerSubmenu-List-Item-Link" href="#">
+                <span class="Menu-Item-Submenu-InnerSubmenu-List-Item-Text"><%= thirdSubmenuItem.title; %></span>
+                <% if (!!thirdSubmenuItem.count) { %>
+                <span class="Menu-Item-Submenu-InnerSubmenu-List-Item-Count"><%= thirdSubmenuItem.count; %></span>
+                <% } %>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>
+        <% } %>
+        <% } %>
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+  </li>
+  <% } %>
+</menu>

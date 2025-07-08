@@ -1,0 +1,39 @@
+<header class="Header">
+  <%- include('../header-info/header-info.ejs') %>
+  <div class="Header-Fixed">
+    <div class="Header-Fixed-Inner">
+      <div class="Header-Wrapper Wrapper">
+        <%- include('../logo/logo.ejs', { logoClassName: 'Header-Logo' }) %>
+        <div class="Header-Controls">
+          <div class="Header-Controls-Top">
+            <!---->
+            <%- include('../button/button.ejs', { buttonClassName: 'Header-Controls-Top-Burger', buttonBurger: true, buttonSize: 'loon', buttonStyle: 'qaho' }) %>
+            <!---->
+            <%- include('../button/button.ejs', { buttonClassName: 'Header-Controls-Top-Hunt', buttonIcon: 'hunter', buttonSize: 'loon', buttonStyle: 'goeg' }) %>
+            <!---->
+            <%- include('../input/input.ejs', { inputClassName: 'Header-Controls-Top-Search', inputName: 'search', inputPlaceholder: 'Поиск товаров...', inputButton: 'Найти' }) %>
+            <div class="Header-Controls-Top-Buttons">
+              <%- include('../button/button.ejs', { buttonClassName: 'Header-Controls-Top-Buttons-Button', buttonLink: true, buttonTarget: true, buttonIcon:
+              'telegram', buttonSize: 'loon', buttonStyle: 'tunq', buttonRadius: 'curse' }) %>
+              <!---->
+              <%- include('../button/button.ejs', { buttonClassName: 'Header-Controls-Top-Buttons-Button', buttonLink: true, buttonTarget: true, buttonIcon: 'whatsapp', buttonSize: 'loon', buttonStyle: 'tunq', buttonRadius: 'curse' }) %>
+            </div>
+          </div>
+          <%- include('../menu/menu.ejs', { menuClassName: 'Header-Controls-Menu' }) %>
+        </div>
+        <div class="Header-Languages"><%- include('../languages/languages.ejs') %></div>
+        <div class="Header-Buttons">
+          <div class="Header-Buttons-List">
+            <!---->
+            <%- include('../button/button.ejs', { buttonClassName: 'Header-Buttons-List-Button', buttonIcon: 'like', buttonSize: 'loon', buttonStyle: 'goeg' }) %>
+            <!---->
+            <%- include('../button/button.ejs', { buttonClassName: 'Header-Buttons-List-Button Header-Buttons-List-Button_hunt', buttonIcon: 'hunter', buttonSize: 'loon', buttonStyle: 'goeg' }) %>
+            <!---->
+            <%- include('../button/button.ejs', { buttonClassName: 'Header-Buttons-List-Button', buttonIcon: 'chest', buttonSize: 'loon', buttonStyle: 'goeg', buttonBadge: 20 }) %>
+          </div>
+          <%- include('../button/button.ejs', { buttonClassName: 'Header-Buttons-Computer', buttonText: 'Собрать компьютер', buttonIcon: 'plus', buttonSize: 'serk', buttonStyle: 'snol' }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

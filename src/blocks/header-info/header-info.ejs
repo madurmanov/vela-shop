@@ -1,0 +1,30 @@
+<div class="HeaderInfo">
+  <div class="HeaderInfo-Wrapper Wrapper">
+    <div class="HeaderInfo-Left">
+      <div class="HeaderInfo-Left-Item"><%- include('../languages/languages.ejs') %></div>
+      <div class="HeaderInfo-Left-Item">
+        <svg class="HeaderInfo-Left-Item-Icon Icon Icon_color_turl">
+          <use xlink:href="#icon-location"></use>
+        </svg>
+        Сайлент-Хилл
+      </div>
+      <div class="HeaderInfo-Left-Item">
+        <svg class="HeaderInfo-Left-Item-Icon Icon Icon_color_turl">
+          <use xlink:href="#icon-phone_16"></use>
+        </svg>
+        <a class="HeaderInfo-Left-Item-Link" href="tel:+7 555 555-37-50">+7 555 555-37-50</a>
+      </div>
+    </div>
+
+    <div class="HeaderInfo-Center">
+      <span class="HeaderInfo-Center-Item">Ежедневно</span>
+      <span class="HeaderInfo-Center-Item">9:00 — 21:00</span>
+    </div>
+
+    <nav class="HeaderInfo-Right">
+      <% for (const item of ['Доставка', 'Оплата', 'Контакты']) { %>
+      <a class="HeaderInfo-Right-Item" href="#"><%= item %></a>
+      <% } %>
+    </nav>
+  </div>
+</div>

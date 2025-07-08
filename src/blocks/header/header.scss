@@ -1,0 +1,184 @@
+@use '../../css/variables.scss' as *;
+@use '../header-info/header-info.scss';
+
+.Header {
+  &-Fixed {
+    min-height: 146px;
+    &-Inner {
+      background-color: $colorDhersa;
+    }
+  }
+  &_fixed &-Fixed-Inner {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: $shadowBullet;
+    transition: top $animationTimeSani;
+    will-change: top;
+  }
+  &_fixedShow &-Fixed-Inner {
+    top: 0;
+  }
+
+  &-Wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 16px;
+    padding-bottom: 24px;
+
+    @include responsive('laptop') {
+      padding-top: 18px;
+    }
+  }
+  &_fixed &-Wrapper {
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 11px;
+  }
+
+  &-Logo {
+    @include responsive('laptop') {
+      order: 2;
+      transform: translateY(-8px);
+    }
+  }
+  &_fixed &-Logo {
+    @include responsive('laptop') {
+      transform: translateY(0);
+    }
+  }
+
+  &-Controls {
+    flex-grow: 1;
+    margin-left: 35px;
+
+    @include responsive('laptop') {
+      order: 1;
+      flex-grow: 0;
+      margin-left: 0;
+    }
+
+    &-Top {
+      display: flex;
+      margin-bottom: 16px;
+
+      @include responsive('laptop') {
+        width: 86px;
+        margin-bottom: 66px;
+      }
+
+      &-Burger {
+        margin-right: 16px;
+
+        @include responsive('laptop') {
+          margin-right: 6px;
+        }
+      }
+
+      &-Hunt {
+        display: none;
+
+        @include responsive('laptop') {
+          display: inline-flex;
+        }
+      }
+
+      &-Search {
+        flex-grow: 1;
+      }
+      & &-Search {
+        @include responsive('laptop') {
+          $searchHorizontalOffset: 16px;
+
+          position: absolute;
+          left: $searchHorizontalOffset;
+          right: $searchHorizontalOffset;
+          bottom: 24px;
+        }
+      }
+
+      &-Buttons {
+        display: flex;
+        margin-left: 24px;
+
+        &-Button:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        @include responsive('laptop') {
+          display: none;
+        }
+      }
+    }
+
+    & &-Menu {
+      @include responsive('laptop') {
+        display: none;
+      }
+    }
+  }
+  &_fixed &-Controls-Top {
+    margin-bottom: 0;
+  }
+  &_fixed &-Controls-Top-Search {
+    @include responsive('laptop') {
+      display: none;
+    }
+  }
+
+  &-Languages {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    margin: 0 53px 0 37px;
+
+    @include responsive('desktop') {
+      margin: 0 24px;
+    }
+
+    @include responsive('laptop') {
+      display: none;
+    }
+  }
+
+  &-Buttons {
+    @include responsive('laptop') {
+      order: 3;
+    }
+
+    &-List {
+      display: flex;
+      justify-content: space-between;
+
+      &-Button:not(:first-child) {
+        margin-left: 16px;
+
+        @include responsive('laptop') {
+          margin-left: 6px;
+        }
+      }
+
+      &-Button_hunt {
+        @include responsive('laptop') {
+          display: none;
+        }
+      }
+    }
+
+    &-Computer {
+      margin-top: 16px;
+      width: 100%;
+
+      @include responsive('laptop') {
+        display: none;
+      }
+    }
+  }
+  &_fixed &-Buttons-Computer {
+    display: none;
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "webpack-html-boilerplate",
+  "version": "1.0.0",
+  "main": "webpack.common.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:madurmanov/webpack-html-boilerplate.git"
+  },
+  "author": "Mikhail Durmanov",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "icons": "webpack --config webpack.icons.js",
+    "start": "npm run clean && npm run icons && webpack serve --config webpack.server.js",
+    "dev": "npm run clean && npm run icons && webpack --config webpack.dev.js",
+    "prod": "npm run clean && npm run icons && webpack --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-ejs": "^1.0.3",
+    "remove-files-webpack-plugin": "^1.5.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^4.0.0",
+    "template-ejs-loader": "^0.9.4",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1"
+  }
+}

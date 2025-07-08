@@ -1,0 +1,34 @@
+<% const buttonLinkFlag = typeof buttonLink == 'boolean' ? true : false; %>
+<% const buttonBurgerFlag = typeof buttonBurger == 'boolean' ? true : false; %>
+
+<% const buttonTargetAttr = typeof buttonTarget == 'boolean' ? ' target="_blank" rel="nofollow noopener"' : ''; %>
+
+<% const buttonIconName = typeof buttonIcon == 'string' ? '#icon-' + buttonIcon : false; %>
+<% const buttonIconMarkup = buttonIconName ? `
+<svg class="Button-Icon Icon">
+  <use xlink:href="${buttonIconName}"></use>
+</svg>
+` : ''; %>
+<% const buttonTextValue = typeof buttonText == 'string' ? buttonText : ''; %>
+<% const buttonBadgeValue = typeof buttonBadge == 'number' ? buttonBadge : ''; %>
+<% const buttonBadgeAttr = buttonBadgeValue ? ` data-badge="${buttonBadgeValue}"` : ''; %>
+
+<% const buttonParentClassName = typeof buttonClassName == 'string' ? buttonClassName + ' ' : ''; %>
+<% const buttonSizeClassName = typeof buttonSize == 'string' ? ' Button_size_' + buttonSize : ''; %>
+<% const buttonStyleClassName = typeof buttonStyle == 'string' ? ' Button_style_' + buttonStyle : ''; %>
+<% const buttonRadiusClassName = typeof buttonRadius == 'string' ? ' Button_radius_' + buttonRadius : ''; %>
+<% const buttonBurgerClassName = buttonBurgerFlag ? ' Button_burger' : ''; %>
+<% const buttonOnlyIconClassName = (buttonIconName && !buttonTextValue) ? ' Button_withOnlyIcon' : ''; %>
+<% const buttonFullClassName = buttonParentClassName + 'Button' + buttonSizeClassName + buttonStyleClassName + buttonRadiusClassName + buttonBurgerClassName + buttonOnlyIconClassName; %>
+
+<% if (buttonLinkFlag) { %>
+<a class="<%= buttonFullClassName %>" href="#"<%- buttonTargetAttr %><%- buttonBadgeAttr %>><%- buttonIconMarkup %><%= buttonTextValue %></a>
+<% } else if (buttonBurgerFlag) { %>
+<button class="<%= buttonFullClassName %>" type="button">
+  <span class="Button-Burger">
+    <span class="Button-Burger-Icon"></span>
+  </span>
+</button>
+<% } else { %>
+<button class="<%= buttonFullClassName %>" type="button"<%- buttonBadgeAttr %>><%- buttonIconMarkup %><%= buttonTextValue %></button>
+<% } %>

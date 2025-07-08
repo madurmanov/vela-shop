@@ -1,0 +1,84 @@
+@use '../../css/variables.scss' as *;
+
+.HeaderInfo {
+  height: 34px;
+  background-color: $colorPrezum;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Helvetica'; // TODO: Change to Maza
+
+  @include responsive('laptop') {
+    height: 26px;
+  }
+
+  &-Wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-Left {
+    display: flex;
+
+    @include responsive('laptop') {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &-Item {
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        display: none;
+
+        @include responsive('laptop') {
+          display: block;
+        }
+      }
+      &:last-child {
+        margin-left: 12px;
+      }
+      &:nth-child(2) {
+        @include responsive('laptop') {
+          display: none;
+        }
+      }
+
+      &-Icon {
+        margin-right: 4px;
+      }
+
+      &-Link:hover,
+      &-Link:focus {
+        color: inherit;
+        cursor: default;
+      }
+    }
+  }
+
+  &-Center {
+    margin: 0 24px;
+
+    &-Item:first-child {
+      margin-right: 12px;
+    }
+
+    @include responsive('laptop') {
+      display: none;
+    }
+  }
+
+  &-Right {
+    display: flex;
+
+    &-Item:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    @include responsive('laptop') {
+      display: none;
+    }
+  }
+}

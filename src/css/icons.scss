@@ -1,0 +1,40 @@
+@use './variables.scss' as *;
+
+.Icon {
+  $iconSize: 16px;
+
+  display: inline-block;
+  width: $iconSize;
+  height: $iconSize;
+  color: $colorProful;
+  transition: color $animationTimeLeo;
+  will-change: color;
+
+  &_size {
+    // https://www.fantasynamegenerators.com/energy-types.php
+
+    &_mojo {
+      $mojoSize: 20px;
+
+      width: $mojoSize;
+      height: $mojoSize;
+    }
+    &_aura {
+      $auraSize: 24px;
+
+      width: $auraSize;
+      height: $auraSize;
+    }
+  }
+
+  &_color {
+    // https://www.fantasynamegenerators.com/gem-mineral-names.php
+
+    &_turl {
+      color: $colorComous;
+    }
+    &_lead {
+      color: $colorJangso;
+    }
+  }
+}

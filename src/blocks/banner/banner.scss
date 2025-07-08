@@ -1,0 +1,67 @@
+@use '../../css/variables.scss' as *;
+
+.Banner {
+  background: $gradientWonker;
+  color: $colorDhersa;
+  overflow: hidden;
+
+  &-Wrapper {
+    position: relative;
+    padding: 100px 84px;
+
+    @include responsive('laptop') {
+      padding: 32px 16px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -201px;
+      bottom: -51px;
+      width: 767px;
+      height: 706px;
+      background: url('../images/gamepad-desktop.png') no-repeat;
+
+      @include responsive('laptop') {
+        right: -218px;
+        bottom: -90px;
+        width: 397px;
+        height: 365px;
+        background: url('../images/gamepad-mobile.png') no-repeat;
+      }
+    }
+  }
+
+  &-Title {
+    position: relative;
+    margin: 0 510px 26px 0;
+    font-size: 32px;
+    line-height: 36px;
+
+    @include responsive('laptop') {
+      margin-right: 0;
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+
+  &-Text {
+    position: relative;
+    margin: 0 600px 26px 1px;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include responsive('laptop') {
+      margin-right: 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &-Button {
+    min-width: 149px;
+  }
+}
